@@ -1,4 +1,4 @@
-# KiwiScope
+# Kiwiguard
 
 Real-time system monitoring dashboard for servers and containers
 
