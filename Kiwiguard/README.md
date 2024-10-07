@@ -3,7 +3,7 @@
 Real-time system monitoring dashboard for servers and containers
 
 ## Overview
-KiwiScope is a real-time system monitoring dashboard that collects, processes, and displays server and container metrics. It helps users track CPU, memory, and disk usage in real-time from multiple servers or containers.
+kiwiguard is a real-time system monitoring dashboard that collects, processes, and displays server and container metrics. It helps users track CPU, memory, and disk usage in real-time from multiple servers or containers.
 
 The project consists of two main components:
 * Collector: The dashboard and API responsible for receiving and visualizing the metrics.
@@ -27,10 +27,10 @@ https://www.docker.com/products/docker-desktop/
 ### Clone the Repository
 
 ```
-git clone https://github.com/yourusername/kiwiscope.git
+git clone https://github.com/yourusername/kiwiguard.git
 ```
 ```
-cd kiwiscope 
+cd kiwiguard 
 ```
 
 ## Install Docker
@@ -44,11 +44,11 @@ cd collector
 2. Build the Docker image for the collector:
 
 ```
-docker build -t kiwiscope-collector .
+docker build -t kiwiguard-collector .
 ```
 3. Run the Collector container:
 ```
-docker run -d -p 8000:8000 kiwiscope-collector
+docker run -d -p 8000:8000 kiwiguard-collector
 ```
 The collector API and dashboard will be accessible at http://localhost:8000.
 
@@ -63,23 +63,23 @@ cd agent
 2. Build the Docker image for the agent:
 
 ```
-docker build -t kiwiscope-agent .
+docker build -t kiwiguard-agent .
 ```
 3. Run the agent container:
 ```
-docker run -d -p 8000:8000 kiwiscope-agent
+docker run -d -p 8000:8000 kiwiguard-agent
 ```
 
 The agent will start collecting metrics and sending them to the collector.
 
 ## Usage
-* Access the KiwiScope dashboard at http://localhost:8000 to view real-time metrics.
+* Access the kiwiguard dashboard at http://localhost:8000 to view real-time metrics.
 * Use the dashboard to monitor CPU, memory, and disk usage across all connected agents.
 
 ## Directory Structure
 
 ```
-kiwiscope/
+kiwiguard/
 ├── agent/
 │   ├── app/
 │   │   └── main.py
