@@ -1,0 +1,4 @@
+{
+  "collector_url": "http://collector.example.com/api/metrics",
+  "interval": 60
+}
