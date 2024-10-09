@@ -48,9 +48,9 @@ docker build -t kiwiguard-collector .
 ```
 3. Run the Collector container:
 ```
-docker run -d -p 8000:8000 kiwiguard-collector
+docker run -d --name collector -p 80:80 kiwiguard-collector
 ```
-The collector API and dashboard will be accessible at http://localhost:8000.
+The collector API and dashboard will be accessible at http://localhost.
 
 
 ## Setting Up the Agent
@@ -67,7 +67,7 @@ docker build -t kiwiguard-agent .
 ```
 3. Run the agent container:
 ```
-docker run -d -p 8000:8000 kiwiguard-agent
+docker run -d --add-host=host.docker.internal:host-gateway kiwiguard-agent
 ```
 
 The agent will start collecting metrics and sending them to the collector.
