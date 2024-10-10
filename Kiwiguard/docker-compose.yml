@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  collector:
+    build: ./collector
+    container_name: collector
+    ports:
+      - "80:80"
+    networks:
+      - app_network
+
+  agent:
+    build: ./agent
+    container_name: agent
+    depends_on:
+      - collector
+    networks:
+      - app_network
+    links:
+      - collector:host.docker.internal
+
+networks:
+  app_network:
