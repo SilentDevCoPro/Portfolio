@@ -6,7 +6,9 @@ Real-time system monitoring dashboard for servers and containers
 kiwiguard is a real-time system monitoring dashboard that collects, processes, and displays server and container metrics. It helps users track CPU, memory, and disk usage in real-time from multiple servers or containers.
 
 The project consists of two main components:
-* Collector: The dashboard and API responsible for receiving and visualizing the metrics.
+
+* Collector: The dashboard and API responsible for receiving metrics.
+* Dashboard: Gets metrics from the Collector and visualizing them.
 * Agent: A lightweight script running on each server/container that gathers system metrics and sends them to the collector.
 
 ## Features
@@ -34,7 +36,17 @@ cd kiwiguard
 ```
 
 ## Install Docker
+Easiest way is to install Docker Desktop: https://www.docker.com/products/docker-desktop/
 
+## Option 1 Installation
+Using docker-compose, this is excellent if you just want to see the project running.
+This will start the agent on the same machine, this is intended for this demo. 
+```
+docker-compose up
+```
+
+## Option 2 Installation
+If you feel like running the setup manually, continue with the instructions below.
 
 ## Setting Up the Collector
 1. Navigate to the collector directory:
