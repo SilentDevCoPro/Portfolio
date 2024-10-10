@@ -98,6 +98,10 @@ kiwiguard/
 └── README.md
 ```
 
+## Future Plans
+* Add Kafka
+* Support multiple agents
+* Store data in database so that you can get a history of data
 
 ## Contributing
 This project is for Max McGregors portfolio use only.
