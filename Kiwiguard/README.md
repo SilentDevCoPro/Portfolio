@@ -90,6 +90,11 @@ kiwiguard/
 │   │   └── main.py
 │   ├── Dockerfile
 │   └── requirements.txt
+├── dashboard/
+│   ├── app/
+│   │   └── main.py
+│   ├── Dockerfile
+│   └── requirements.txt
 └── README.md
 ```
 
