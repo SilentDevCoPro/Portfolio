@@ -46,19 +46,19 @@ def update_graph_live(n, selected_metric):
     global global_df
 
     # Fetch data from the Collector
-    collector_host = os.getenv('COLLECTOR_HOST', 'localhost')
+    collector_host = os.getenv('COLLECTOR_HOST', 'collector')
     collector_port = os.getenv('COLLECTOR_PORT', '5000')
-    collector_url = f'http://{collector_host}:{collector_port}/metrics'
+    collector_url = f'http://{collector_host}:{collector_port}/latest_metrics'
 
     try:
         response = requests.get(collector_url)
         data = response.json()
-
+        logging.info(f'data: {data}')
         # Convert timestamp to datetime for better plotting
         data['timestamp'] = pd.to_datetime(data['timestamp'], unit='s')
 
         # Append new data to the global DataFrame
-        global_df = global_df.append(data, ignore_index=True)
+        global_df = pd.concat([global_df, pd.DataFrame([data])], ignore_index=True)
     except Exception as e:
         print(f"Error fetching data: {e}")
 

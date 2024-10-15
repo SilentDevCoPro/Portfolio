@@ -1,4 +1,4 @@
 {
-  "collector_url": "http://collector/latest_metrics/",
+  "collector_url": "http://collector:5000/latest_metrics",
   "interval": 10
 }
