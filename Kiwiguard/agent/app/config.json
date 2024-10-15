@@ -1,4 +1,4 @@
 {
-  "collector_url": "http://host.docker.internal/metrics/",
+  "collector_url": "http://collector/metrics/",
   "interval": 10
 }

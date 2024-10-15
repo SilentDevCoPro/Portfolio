@@ -1,0 +1,4 @@
+{
+  "collector_url": "http://collector/latest_metrics/",
+  "interval": 10
+}

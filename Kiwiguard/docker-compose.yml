@@ -4,8 +4,6 @@ services:
   collector:
     build: ./collector
     container_name: collector
-    ports:
-      - "80:80"
     networks:
       - app_network
 
@@ -16,8 +14,16 @@ services:
       - collector
     networks:
       - app_network
-    links:
-      - collector:host.docker.internal
+
+  dashboard:
+    build: ./dashboard
+    container_name: dashboard
+    depends_on:
+      - collector
+    ports:
+      - "8050:8050"
+    networks:
+      - app_network
 
 networks:
   app_network:
